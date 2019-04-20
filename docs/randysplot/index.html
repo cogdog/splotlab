@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Inspire Me</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />	
+
+
+</head>
+<body>
+
+	<div id="stuff" class="trans_box1">
+		<h1 id="title"></h1>
+		<p class="small">An experiment in random images drawn from the SPLOT at  <span id="splot"></span><br /><span id="license"></span> <span id="sharedby"></span></p> 
+		<p id="furl"></p>	
+	</div>
+	
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"></script>	
+<script>
+$(document).ready(function(){
+
+	// this sets the image source, in the future it could be
+	// a front page entry
+	var splot_source = 'http://splot.ca/collector';
+
+	function update_backdrop ( fromsplot ) {
+		// populates the page with stuff from the remotely fetched json data
+		randyimage = fromsplot[0]; 
+		
+		// load the background image
+		$.backstretch(randyimage.images.large);	
+		
+		// set the title and source of the SPLOT site
+		$('#title').text(randyimage.title);	
+		$('#splot').text(splot_source);
+		
+		// load license data
+		if (randyimage.license === null) randyimage.license = "Rights Status Unknown";
+		$('#license').html('This image is licensed: <strong>' + randyimage.license + '</strong>');		
+		
+		// load the credit data
+		if (randyimage.sharedby != '') $('#sharedby').html( 'and was shared by <strong>' + randyimage.sharedby + '</strong>');
+		
+		// add link to the source splot item page
+		$('#furl').html('<a href="' + randyimage.link + '" target="_blank">' +  randyimage.link + '</a>');
+	}
+
+
+	// Let's get some images!
+	$.ajax({
+	  url: splot_source + '/wp-json/splotcollector/v1/randy/1',
+	  jsonp:"cb",
+	  dataType:'json',
+	  success: function(data) {
+		// save the results in array we can use later
+		splotstuff = data;
+		
+		// use function to update display
+		update_backdrop(splotstuff);
+				
+		} //success
+	  }); //ajax
+	  
+});//ready
+</script>
+
+</body>
+</html>

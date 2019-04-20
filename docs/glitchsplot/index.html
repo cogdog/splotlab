@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Glitch Me a SPLOT</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />	
+
+
+</head>
+<body>
+
+<div class="container">
+   <!-- this elem will be glitch -->
+   <div class="glitch-img"></div>
+</div>
+
+	<div id="stuff" class="trans_box1">
+		<h1>Glitching the SPLOT: <span id="title"></span></h1>
+		<p class="small">An experiment in adding <a href="https://github.com/hmongouachon/mgGlitch">glitch effect</a> to a random image drawn from SPLOT at <span id="splot"></span><br /><span id="license"></span> <span id="sharedby"></span></p> 
+		<p id="furl"></p>	
+	</div>
+	
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="mgGlitch.min.js"></script>	
+	
+	<script>
+	$(document).ready(function(){
+
+		// this sets the image source, in the future it could be
+		// a front page entry
+		var splot_source = 'http://splot.ca/collector';
+
+		function update_backdrop ( fromsplot ) {
+			// populates the page with stuff from the remotely fetched json data
+			randyimage = fromsplot[0]; 
+		
+			// glitch the background image		
+			$('.glitch-img').css('background-image', 'url(' + randyimage.images.large + ')' );
+
+			$( function() {
+					$( ".glitch-img" ).mgGlitch({
+					  // set 'true' to stop the plugin
+					  destroy : false, 
+					  // set 'false' to stop glitching
+					  glitch: true, 
+					  // set 'false' to stop scaling
+					  scale: true, 
+					  // set 'false' to stop glitch blending
+					  blend : true, 
+					  // select blend mode type
+					  blendModeType : 'hue',
+					  // set min time for glitch 1 elem
+					  glitch1TimeMin : 200, 
+					  // set max time for glitch 1 elem
+					  glitch1TimeMax : 400,
+					  // set min time for glitch 2 elem
+					  glitch2TimeMin : 10, 
+					  // set max time for glitch 2 elem
+					  glitch2TimeMax : 100, 
+					});
+			});
+		
+			// set the title and source of the SPLOT site
+			$('#title').text(randyimage.title);	
+			$('#splot').text(splot_source);
+		
+			// load license data
+			if (randyimage.license === null) randyimage.license = "Rights Status Unknown";
+			$('#license').html('This image is licensed: <strong>' + randyimage.license + '</strong>');		
+		
+			// load the credit data
+			if (randyimage.sharedby != '') $('#sharedby').html( 'and was shared by <strong>' + randyimage.sharedby + '</strong>');
+		
+			// add link to the source splot item page
+			$('#furl').html('<a href="' + randyimage.link + '" target="_blank">' +  randyimage.link + '</a>');
+		}
+
+
+		// Let's get some images!
+		$.ajax({
+		  url: splot_source + '/wp-json/splotcollector/v1/randy/1',
+		  jsonp:"cb",
+		  dataType:'json',
+		  success: function(data) {
+			// save the results in array we can use later
+			splotstuff = data;
+		
+			// use function to update display
+			update_backdrop(splotstuff);
+				
+			} //success
+		  }); //ajax
+	  
+	});//ready
+	</script>
+
+</body>
+</html>
