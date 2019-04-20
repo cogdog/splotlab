@@ -16,8 +16,7 @@
 
 	<div id="stuff" class="trans_box1">
 		<h1>Glitching the SPLOT: <span id="title"></span></h1>
-		<p class="small">An experiment in adding <a href="https://github.com/hmongouachon/mgGlitch">glitch effect</a> to a random image drawn from SPLOT at <span id="splot"></span><br /><span id="license"></span> <span id="sharedby"></span></p> 
-		<p id="furl"></p>	
+		<p class="small">An experiment in adding <a href="https://github.com/hmongouachon/mgGlitch">glitch effect</a> to a random image drawn from the SPLOT at <span id="splot"></span> <span id="license"></span> <span id="sharedby"></span> <span id="furl"></p>	
 	</div>
 	
 
@@ -29,7 +28,6 @@
 
 		// this sets the image source, in the future it could be
 		// a front page entry
-		// make it https!
 		var splot_source = 'https://splot.ca/collector';
 
 		function update_backdrop ( fromsplot ) {
@@ -68,13 +66,13 @@
 		
 			// load license data
 			if (randyimage.license === null) randyimage.license = "Rights Status Unknown";
-			$('#license').html('This image is licensed: <strong>' + randyimage.license + '</strong>');		
+			$('#license').html('The original image being glitched is licensed <strong>' + randyimage.license + '</strong>');		
 		
 			// load the credit data
 			if (randyimage.sharedby != '') $('#sharedby').html( 'and was shared by <strong>' + randyimage.sharedby + '</strong>');
 		
 			// add link to the source splot item page
-			$('#furl').html('<a href="' + randyimage.link + '" target="_blank">' +  randyimage.link + '</a>');
+			$('#furl').html('and is found at <a href="' + randyimage.link + '" target="_blank">' +  randyimage.link + '</a>');
 		}
 
 

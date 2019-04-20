@@ -39,19 +39,20 @@ body, html {
 {
 	position: relative; 
 	top: 0;
-	color: #000; font-family: Helvetica; 
-	padding: 0.2em;
-	margin: 0 5%;
+	color: #000; font-family: Helvetica, san-serif; 
+	padding: 1em;
+	margin: 0 5% 3em;
+	border-radius: 25px;
 }
 img {border: none; }
 
-p { font-size: 12px; line-height: 18px; margin:0;}
-h1 { font-size: 24; line-height: 54px; margin:0; }
+p { font-size: 1em; margin:0; line-height: 1.2em;}
+h1 { font-size: 1.5em;  margin:0; }
 h2 { font-size: 14px; line-height: 32px; margin-bottom:20px; }
 a { color: #000; font-weight: bold; text-decoration: none; }
 a:hover { color: #B85763; text-decoration: underline; }
 
-p.small { font-size: 10px; line-height: 14px; margin-bottom: 4px; }
+p.small { font-size: 0.9em;}
 
 .trans_box1[class] {
 	background-color:#fff;
