@@ -9,10 +9,10 @@
 </head>
 <body>
 
-<div class="container">
-   <!-- this elem will be glitch -->
-   <div class="glitch-img"></div>
-</div>
+	<div class="container">
+	   <!-- this element will be glitch -->
+	   <div class="glitch-img"></div>
+	</div>
 
 	<div id="stuff" class="trans_box1">
 		<h1>Glitching the SPLOT: <span id="title"></span></h1>
@@ -66,13 +66,13 @@
 		
 			// load license data
 			if (randyimage.license === null) randyimage.license = "Rights Status Unknown";
-			$('#license').html('The original image being glitched is licensed <strong>' + randyimage.license + '</strong>');		
+			$('#license').html('The original image being glitched is licensed <strong>' + randyimage.license + '</strong> ');		
 		
 			// load the credit data
-			if (randyimage.sharedby != '') $('#sharedby').html( 'and was shared by <strong>' + randyimage.sharedby + '</strong>');
+			if (randyimage.sharedby != '') $('#sharedby').html( 'and was shared by <strong>' + randyimage.sharedby + '</strong> ');
 		
 			// add link to the source splot item page
-			$('#furl').html('and is found at <a href="' + randyimage.link + '" target="_blank">' +  randyimage.link + '</a>');
+			$('#furl').html('-- see the original image at <a href="' + randyimage.link + '" target="_blank">' +  randyimage.link + '</a>');
 		}
 
 
