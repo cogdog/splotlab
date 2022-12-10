@@ -7,6 +7,7 @@ This documentation provides general information for installing, updating, and te
 Even if it sounds complicated, taking control of your SPLOTs empowers you!
 
 ![Knobs and switches of the SPLOT control panel, a strange mechanical panel with russian labels](splot-control.jpg "Knobs and switches of the SPLOT control panel") 
+
 *SPLOT control panel by Alan Levine based on [2007.06.17 – 115 Gdynia G?ówna, ET22-681 cockpit](https://flickr.com/photos/faxepl/561241356) flickr image by [faxepl](https://flickr.com/people/faxepl) shared under a [Creative Commons (BY-SA) license](https://creativecommons.org/licenses/by-sa/2.0/) modified by inserting SPLOT logo and cropping, shared here CC BY-SA.*
 
 
@@ -24,7 +25,7 @@ Learn more via the links to Github or view a more friendly formatted version for
 * DS106 Assignment Bank [Github](https://github.com/cogdog/ds106bank)| [Docsify This](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/cogdog/ds106bank/master&sidebar=true#/)
 
 
-##  Requirements
+## Requirements
 
 Creating a WordPress SPLOT requires a self-hosted Wordpress site (the kind that you download or install from [wordpress.org](http://www.wordpress.org). Knowledge of WordPress concepts of pages vs posts, menus, categories, tags, the Customizer will go a long way but is not critical-- but find a friend or colleague to help.
 
@@ -34,16 +35,17 @@ Any web host will do, but I most highly recommend [Reclaim Hosting](https://recl
 
 You will first need to create a new empty Hello World WordPress site.
 
-## Install the Parent theme
+## Start With the Parent theme
 Each WordPress SPLOT requires a different "parent" theme that provides the basic structure and presentation for your SPLOT. For example,  TRU Collector requires the Fukasawa theme and SPLOTbox requires one called Garfunkel (full detail are provided in each SPLOT's installation instructions).
 
 Install the specified parent theme within the Wordpress Dashboard under **Appearance** -- **Themes** searching on the theme name. You do not need to activate it, the parent theme merely needs to be present.
 
-Each SPLOT theme is a "child" that adds extra functionality and formatting to provide the SPLOT capability. Next are  two ways to install a SPLOT theme.
+Each SPLOT theme is a "child" that adds extra functionality and formatting to provide the SPLOT capability. Next are two ways to install a SPLOT theme.
 
 ## Manual Installation
 
 ![Automobile stick shift with gear 4 replaced by "install" and gear 5 replaced by "update"](splot-shift.jpg "") 
+
 *SPLOT stick shift by Alan Levine based on [Stick Shift [Transportation]](https://flickr.com/photos/trustypics/42866781801) flickr image by [trustypics](https://flickr.com/people/trustypics) shared under a [Creative Commons (BY-NC) license](https://creativecommons.org/licenses/by-nc/2.0/) modified by inserting SPLOT logo and cropping, shared here CC BY-NC*
 
 
@@ -95,7 +97,7 @@ Be amazed!
 
 ## Updating Reclaim Hosting' Custom Installed SPLOTs
 
-This applies only to those who previously set up TRU Collector or TRU Writer sites with the installers offered to [Reclaim Hosting](https://reclaimhosting.com/) clients as Featured Applications (if you are creating a *new* SPLOT site please use the  intructions above).
+This applies only to those who previously set up TRU Collector or TRU Writer sites with the installers offered to [Reclaim Hosting](https://reclaimhosting.com/) clients as Featured Applications... if you are creating a *new* SPLOT site [please use the  intructions above](#manual-installation).
 
 ![](reclaim-featured-apps.jpg "")
 
@@ -117,7 +119,7 @@ Do not worry! Because of this change from Reclaim Hosting, nothing will happen t
 
 ### Updating a Featured App SPLOT
 
-You will have to follow the manual update instructions above, where you must download a new version of the SPLOT theme from GitHub, and upload it as a new theme.
+You will have to follow [the manual update instructions above](#updating-a-manually-installed-splot), where you must download a new version of the SPLOT theme from GitHub, and upload it as a new theme.
 
 **But you have to make one adjustment first**, because for say the TRU Writer theme WordPress is expecting the theme stored in a directory named, for example, `truwriter` and unfortunately GitHub provides it in a directory named `truwriter-master` downloaded as `truwriter-master.zip`. This is a zip "dance" you will have to do:
 
@@ -128,7 +130,7 @@ You will have to follow the manual update instructions above, where you must dow
 3. Change the name of the top level directory from `splotname-master` to `splotname`
 4. Re-compress the enture theme directory as `splotname.zip`
 
-This is the file you should upload as a theme (see steps above for "Updating a Manually Installed SPLOT").
+This is the file you should upload as a theme--see [steps above for "Updating a Manually Installed SPLOT"]([the manual update instructions above](#updating-a-manually-installed-splot)).
 
 Yes, this is a bit tedious (and there might be easier ways to change the `.zip`), but, again, like learning to drive a manual transmission it may be awkward the first time, but then you can do it more naturally AND feel the pride of being in sync with your motor (yes, the author, has milked the metaphor too far!)
 
