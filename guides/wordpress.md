@@ -136,7 +136,7 @@ Yes, this is a bit tedious (and there might be easier ways to change the `.zip`)
 
 ## If You Need help
 
-Do not spin your wheels too much! You can make use of the Reclaim Hosting support, ask in their [community space](https://community.reclaimhosting.com), and you can always ask @cogdog via his contacts shared in each theme ir the discussion spaces provided in each Github SPLOT space.
+Do not spin your wheels too much! You can make use of the Reclaim Hosting support, ask in their [community space](https://community.reclaimhosting.com), and you can always ask @cogdog via his contacts shared in each theme or the discussion spaces provided in each Github SPLOT space.
 
 See you out on the SPLOT roadways!
 
